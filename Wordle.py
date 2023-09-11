@@ -11,12 +11,18 @@ from WordleDictionary import FIVE_LETTER_WORDS
 from WordleGraphics import WordleGWindow, N_COLS, N_ROWS
 
 def wordle():
-
+    wordToGuess = pickWord()
     def enter_action(s):
         gw.show_message("You have to implement this method.")
 
     gw = WordleGWindow()
     gw.add_enter_listener(enter_action)
+    print(wordToGuess)
+
+def pickWord():
+    pickedWordNum = random.randrange(len(FIVE_LETTER_WORDS))
+    pickedWord = FIVE_LETTER_WORDS[pickedWordNum]
+    return pickedWord
 
 # Startup code
 
